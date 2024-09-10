@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+		http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <property name="schemaName" value="haelthcarejsonai"></property>
+    <property name="author=" value="db-designer"></property>
+    <changeSet id="v1-01-01" author="${author}">
+    
+ <createTable schemaName="${schemaName}" tableName="Clinic">
+    <column name="ClinicId" type="String" >
+        <constraints nullable="false" primaryKey="true"/>
+    </column>
+     <column name="ClinicName" type="String" />
+    
+     <column name="Address" type="String" />
+    
+ 	
+</createTable>
+ <createTable schemaName="${schemaName}" tableName="Patient">
+	<column name="PatientId" type="SERIAL" autoIncrement="true" >
+        <constraints nullable="false" primaryKey="true"/>
+    </column>
+     <column name="Name" type="String" />
+    
+     <column name="MobileNumber" type="String" />
+    
+ 	
+</createTable>
+ <createTable schemaName="${schemaName}" tableName="Doctor">
+	<column name="DoctorID" type="SERIAL" autoIncrement="true" >
+        <constraints nullable="false" primaryKey="true"/>
+    </column>
+     <column name="DoctorName" type="String" />
+    
+     <column name="MobileNumber" type="String" />
+    
+     <column name="Email" type="String" />
+    
+ 	
+</createTable>
+	
+
+	
+   	    </changeSet>
+</databaseChangeLog>

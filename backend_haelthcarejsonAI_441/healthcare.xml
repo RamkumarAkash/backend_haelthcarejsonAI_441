@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="healthcare">
+            <EntityType HasStream="false" Name="Patient">
+                <Key>
+                    <PropertyRef Name="PatientId"/>
+                </Key>
+                <Property Name="PatientId" Type="Long" isUnique="false"/>
+                <Property Name="Name" Type="String" isUnique="false"/>
+                <Property Name="MobileNumber" Type="String" isUnique="false"/>
+            </EntityType>
+            <EntityType HasStream="false" Name="Doctor">
+                <Key>
+                    <PropertyRef Name="DoctorID"/>
+                </Key>
+                <Property Name="DoctorID" Type="Long" isUnique="false"/>
+                <Property Name="DoctorName" Type="String" isUnique="false"/>
+                <Property Name="MobileNumber" Type="String" isUnique="false"/>
+                <Property Name="Email" Type="String" isUnique="false"/>
+            </EntityType>
+            <EntityType HasStream="false" Name="Clinic">
+                <Key>
+                    <PropertyRef Name="ClinicId"/>
+                </Key>
+                <Property Name="ClinicId" Type="String" isUnique="false"/>
+                <Property Name="ClinicName" Type="String" isUnique="false"/>
+                <Property Name="Address" Type="String" isUnique="false"/>
+            </EntityType>
+            <EntityContainer Name="Container">
+                <EntitySet Name="Patients" EntityType="healthcare.Patient"/>
+                <EntitySet Name="Doctors" EntityType="healthcare.Doctor"/>
+                <EntitySet Name="Clinics" EntityType="healthcare.Clinic"/>
+            </EntityContainer>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
